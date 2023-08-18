@@ -36,14 +36,14 @@ function Instructions() {
 		count: steps.length,
 	})
 
-  const [tabIndex, setTabIndex] = useState(0)
+  const [setTabIndex] = useState(0)
 
   const handleTabsChange = (index) => {
     setTabIndex(index)
   }
 
   return (
-    <body>
+    <body id='instructions__container'>
       <Stepper size='md' index={activeStep} margin='50px'>
         {steps.map((step, index) => (
           <Step key={index} onClick={() => setActiveStep(index)}>

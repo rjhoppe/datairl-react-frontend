@@ -37,6 +37,7 @@ const Form = () => {
 							<Select isRequired='true' placeholder='Select option'>
 								<option value='option1'>CX Customer Care</option>
 								<option value='option2'>CX Digital Experience</option>
+								<option value='option2'>EX Candidate Experience</option>
 								<option value='option3'>EX Employee Experience</option>
 							</Select>
 						</FormControl>

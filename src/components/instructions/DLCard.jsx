@@ -33,7 +33,7 @@ const DLCard = (props) => {
 				<CardBody>
 				<Text>{ cards.description }</Text>
 				</CardBody>
-				<CardFooter>
+				<CardFooter justifyContent='center'>
 				<Button>{ cards.buttonText }</Button>
 				</CardFooter>
 			</Card>

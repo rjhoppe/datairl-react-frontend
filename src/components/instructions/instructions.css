@@ -1,3 +1,7 @@
+#instructions__container {
+	height: 100vh;
+}
+
 .tab__text {
   font-size: 24px;
 	margin-top: 25px;
