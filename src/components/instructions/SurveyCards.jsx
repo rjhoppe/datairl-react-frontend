@@ -7,10 +7,10 @@ import {
 const SurveyCards = () => {
 	
 	const [cards] = useState([
-		{ heading: 'CX Customer Care', description: 'View a summary of all your customers over the last month.', buttonText: 'Download' },
-		{ heading: 'CX Digital Exp', description: 'View a summary of all your customers over the last month.', buttonText: 'Download' },
-		{ heading: 'EX Candidate Exp', description: 'View a summary of all your customers over the last month.', buttonText: 'Download' },
-		{ heading: 'EX Employee Exp', description: 'View a summary of all your customers over the last month.', buttonText: 'Download' },
+		{ heading: 'CX Customer Care', description: 'View a summary of all your customers over the last month.', buttonText: 'Download', buttonColor:'blue' },
+		{ heading: 'CX Digital Exp', description: 'View a summary of all your customers over the last month.', buttonText: 'Download', buttonColor:'blue' },
+		{ heading: 'EX Candidate Exp', description: 'View a summary of all your customers over the last month.', buttonText: 'Download', buttonColor:'blue' },
+		{ heading: 'EX Employee Exp', description: 'View a summary of all your customers over the last month.', buttonText: 'Download', buttonColor:'blue' },
 		{ heading: 'CX Healthcare Exp', description: 'View a summary of all your customers over the last month.', buttonText: 'Coming Soon!' },
 		{ heading: 'CX Gov Exp', description: 'View a summary of all your customers over the last month.', buttonText: 'Coming Soon!' }
 	]);

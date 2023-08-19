@@ -34,7 +34,7 @@ const DLCard = (props) => {
 				<Text>{ cards.description }</Text>
 				</CardBody>
 				<CardFooter justifyContent='center'>
-				<Button>{ cards.buttonText }</Button>
+				<Button colorScheme= { cards.buttonColor }>{ cards.buttonText }</Button>
 				</CardFooter>
 			</Card>
 			))}

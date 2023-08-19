@@ -1,6 +1,9 @@
 import React from 'react'
 import { useState } from "react";
 import SurveyCards from './SurveyCards';
+import loginGif from './gifs/login-to-qualtrics-2023-7-19.gif'
+import importQSF from './gifs/import-qsf-qualtrics-2023-7-19.gif'
+import genAnonymousLink from './gifs/grab-anonymous-link-2023-7-19.gif'
 import Form from '../form/Form'
 import './instructions.css';
 import {
@@ -80,12 +83,15 @@ function Instructions() {
           </TabPanel>
           <TabPanel id='tab__2'>
             <p className='tab__text'>Login to your Qualtrics brand</p>
+            <img src={loginGif} alt="login to Qualtrics" />
           </TabPanel>
           <TabPanel id='tab__3'>
             <p className='tab__text'>Upload your template to a new Qualtrics project</p>
+            <img src={importQSF} alt="import template QSF to Qualtrics" />
           </TabPanel>
           <TabPanel id='tab__4'>
             <p className='tab__text'>Copy your project's anonymous link to your clipboard</p>
+            <img src={genAnonymousLink} alt="import template QSF to Qualtrics" />
           </TabPanel>
           <TabPanel id='tab__5'>
             <p className='tab__text'>Request Form</p>
