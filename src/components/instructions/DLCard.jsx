@@ -4,8 +4,8 @@ import {
     CardHeader, 
     CardBody, 
     CardFooter,
-		Heading,
-		Text,
+	Heading,
+	Text,
     Button,
     SimpleGrid,
 } from '@chakra-ui/react'
@@ -34,7 +34,7 @@ const DLCard = (props) => {
 				<Text>{ cards.description }</Text>
 				</CardBody>
 				<CardFooter justifyContent='center'>
-				<Button colorScheme= { cards.buttonColor }>{ cards.buttonText }</Button>
+				<Button as="a" href= { cards.buttonLink } colorScheme= { cards.buttonColor }>{ cards.buttonText }</Button>
 				</CardFooter>
 			</Card>
 			))}

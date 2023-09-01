@@ -13,7 +13,7 @@ const Faq = () => {
   
 	return (
     
-		<Accordion allowMultiple margin='100px' >
+		<Accordion allowMultiple margin='100px'>
 			<div className='accordion__title'>
 				<h2>FAQs</h2>
 			</div>

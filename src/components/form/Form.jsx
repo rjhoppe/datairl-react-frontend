@@ -1,4 +1,6 @@
 import React from 'react'
+import { useState } from 'react'
+import axios from 'axios'
 import {
   FormControl,
   FormLabel,
@@ -20,6 +22,53 @@ import {
 import { HiOutlineMail } from 'react-icons/hi'
 
 const Form = () => {
+
+	const handleSubmit = e => {
+		// Prevent the default submit and page reload
+		e.preventDefault()
+
+		// Check for fields not filled out
+
+
+		// Remove after testing
+		alert(`Email: ${email}, Response Type: ${requestType}, Anonymous Link: ${anonLink}, Response Number: ${respNum}`)
+
+		// Add API links
+		let url = ''
+		if (requestType === 'cx-cust-care') {
+			url = 'placeholder'
+		} else if(requestType === 'cx-dig-exp') {
+			url = 'placeholder'
+		} else if(requestType === 'ex-can-exp') {
+			url = 'placeholder'
+		} else if(requestType === 'ex-emp-exp') {
+			url = 'placeholder'
+		} else {
+			console.log('ERROR: Request type not valid')
+		}
+
+		axios.post(`${url}`, { 
+				Email: email, 
+				ResponseType: requestType, 
+				AnonymousLink: anonLink,
+				ResponseNumber: respNum })
+			.then(response => {
+				alert('Test')
+				console.log(response)
+				// Handle response
+			})
+			.catch(error => {
+				console.log(error)
+			})	
+	}
+
+	const [email, setEmail] = useState()
+	const [requestType, setRequestType] = useState()
+	const [anonLink, setAnonLink] = useState()
+	const [respNum, setRespNum] = useState()
+	const handleChange = (respNum) => setRespNum(respNum)
+
+
   return (
 		<Card alignItems='center'>
 			<CardBody>
@@ -27,34 +76,63 @@ const Form = () => {
 					<Box width='500px'>
 						<FormControl>
 							<FormLabel>Email address</FormLabel>
-							<Input type='email' />
+							<Input 
+								type='email'
+								name='email'
+								id='form__email'
+								isRequired='true'
+								value={email}
+								onChange={e => setEmail(e.target.value)}
+							/>
 							<FormHelperText textAlign='left'>We'll never share your email.</FormHelperText>
 						</FormControl>
 					</Box>
 					<Box>
 						<FormControl>
 							<FormLabel>Select a project type</FormLabel>
-							<Select isRequired='true' placeholder='Select option'>
-								<option value='option1'>CX Customer Care</option>
-								<option value='option2'>CX Digital Experience</option>
-								<option value='option2'>EX Candidate Experience</option>
-								<option value='option3'>EX Employee Experience</option>
+							<Select 
+								id='form__resp__type' 
+								isRequired='true' 
+								placeholder='Select option'
+								type='text'
+								name='requestType'
+								value={requestType}
+								onChange={e => setRequestType(e.target.value)}
+							>
+								<option value='cx-cust-care'>CX Customer Care</option>
+								<option value='cx-dig-exp'>CX Digital Experience</option>
+								<option value='ex-can-exp'>EX Candidate Experience</option>
+								<option value='ex-emp-exp'>EX Employee Experience</option>
 							</Select>
 						</FormControl>
 					</Box>
 					<Box>
 						<FormControl>
 							<FormLabel>Anonymous survey link</FormLabel>
-							<Input type='email' />
+							<Input 
+								type='url'
+								name='anonLink'
+								isRequired='true'
+								id='form__anon__link'
+								value={anonLink}
+								onChange={e => setAnonLink(e.target.value)}
+							/>
 							<FormHelperText></FormHelperText>
 						</FormControl>
 					</Box>
 					<Box>
 						<FormControl>
 							<FormLabel>Number of responses</FormLabel>
-							<NumberInput step={5} max={100} min={5}>
+							<NumberInput step={5} max={100} min={5} value={respNum} onChange={handleChange}>
 								<NumberInputField />
-								<NumberInputStepper>
+								<NumberInputStepper
+									type='number'
+									name='respNum'
+									isRequired='true'
+									id='form__resp__num'
+									value={respNum}
+									onChange={handleChange}
+								>
 									<NumberIncrementStepper />
 									<NumberDecrementStepper />
 								</NumberInputStepper>
@@ -65,6 +143,7 @@ const Form = () => {
 						leftIcon={<HiOutlineMail />} 
 						colorScheme='blue' 
 						variant='solid'
+						onClick={handleSubmit}
 					>
     				Submit
 					</Button>
